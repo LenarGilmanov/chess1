@@ -80,6 +80,7 @@ class ChessBoard {
             System.out.println();
             System.out.println();
         }
+
         System.out.println("Player 1(White)");
     }
 
@@ -94,7 +95,7 @@ class ChessBoard {
                     board[0][1] == null && board[0][2] == null && board[0][3] == null) {
                 if (board[0][0].getColor().equals("White") && board[0][4].getColor().equals("White") &&
                         board[0][0].check && board[0][4].check &&
-                        !(new King("White").isUnderAttack(this,0,2))) {
+                        !(new King("White").isUnderAttack(this, 0, 2))) {
                     board[0][4] = null;
                     board[0][2] = new King("White");
                     board[0][2].check = false;
@@ -129,8 +130,6 @@ class ChessBoard {
             } else return false;
         } else return false;
     }
-
-
 }
 
 //2.7.1
@@ -153,7 +152,6 @@ abstract class ChessPiece {
 
 //2.7.2
 class Horse extends ChessPiece {
-
     public Horse(String color) {
         super(color);
     }
@@ -224,7 +222,6 @@ class Pawn extends ChessPiece {
                 return targetPiece != null && !targetPiece.getColor().equals(this.getColor());
             }
         }
-
         return false;
     }
 
@@ -268,7 +265,6 @@ class Bishop extends ChessPiece {
             }
             return true;
         }
-
         return false;
     }
 
@@ -316,7 +312,6 @@ class Rook extends ChessPiece {
             }
             return true;
         }
-
         return false;
     }
 
@@ -410,8 +405,6 @@ class King extends ChessPiece {
 
         if ((Math.abs(toLine - line) > 1) || Math.abs(toColumn - column) > 1) return false;
         return true;
-
-//        boolean canMove = this.isUnderAttack(chessBoard, toLine, toColumn);
     }
 
     @Override
@@ -483,18 +476,16 @@ public class Main {
     public static void main(String[] args) {
 
         ChessBoard board = buildBoard();
-        
+
         Scanner scanner = new Scanner(System.in);
 
-
-
         System.out.println("""
-               Чтобы проверить игру надо вводить команды:
-               'exit' - для выхода
-               'replay' - для перезапуска игры
-               'castling0' или 'castling7' - для рокировки по соответствующей линии
-               'move 1 1 2 3' - для передвижения фигуры с позиции 1 1 на 2 3(поле это двумерный массив от 0 до 7)
-               Проверьте могут ли фигуры ходить друг сквозь друга, корректно ли съедают друг друга, можно ли поставить шах и сделать рокировку?""");
+                Чтобы проверить игру надо вводить команды:
+                'exit' - для выхода
+                'replay' - для перезапуска игры
+                'castling0' или 'castling7' - для рокировки по соответствующей линии
+                'move 1 1 2 3' - для передвижения фигуры с позиции 1 1 на 2 3(поле это двумерный массив от 0 до 7)
+                Проверьте могут ли фигуры ходить друг сквозь друга, корректно ли съедают друг друга, можно ли поставить шах и сделать рокировку?""");
         System.out.println();
         board.printBoard();
         while (true) {
@@ -534,7 +525,6 @@ public class Main {
                     } catch (Exception e) {
                         System.out.println("Вы что-то ввели не так, попробуйте ещё раз");
                     }
-
                 }
             }
         }
