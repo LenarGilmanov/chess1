@@ -389,7 +389,7 @@ class Queen extends ChessPiece {
     }
 }
 
- //2.7.6
+//2.7.6
 class King extends ChessPiece {
     public King(String color) {
         super(color);
