@@ -239,7 +239,7 @@ class Pawn extends ChessPiece {
     }
 }
 
-//2.7.4 Слон
+//2.7.4 Слон/////
 class Bishop extends ChessPiece {
     public Bishop(String color) {
         super(color);
