@@ -245,6 +245,7 @@ class Bishop extends ChessPiece {
         super(color);
     }
 
+
     @Override
     boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
         if (toLine < 0 || toLine > 7 || toColumn < 0 || toColumn > 7) return false;
